@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hitung Luas Trapesium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Hitung Luas Trapesium</h2>
+    <label for="sisiAtas">Sisi Atas (a):</label>
+    <input type="number" id="sisiAtas" placeholder="Masukkan panjang sisi atas">
+
+    <label for="sisiBawah">Sisi Bawah (b):</label>
+    <input type="number" id="sisiBawah" placeholder="Masukkan panjang sisi bawah">
+
+    <label for="tinggi">Tinggi (t):</label>
+    <input type="number" id="tinggi" placeholder="Masukkan tinggi trapesium">
+
+    <button onclick="hitungLuas()">Hitung Luas</button>
+
+    <div class="result" id="hasil"></div>
+</div>
+
+<script>
+    function hitungLuas() {
+        var a = parseFloat(document.getElementById("sisiAtas").value);
+        var b = parseFloat(document.getElementById("sisiBawah").value);
+        var t = parseFloat(document.getElementById("tinggi").value);
+
+        if (isNaN(a) || isNaN(b) || isNaN(t)) {
+            document.getElementById("hasil").innerHTML = "Mohon isi semua nilai dengan benar.";
+            return;
+        }
+
+        var luas = 0.5 * (a + b) * t;
+        document.getElementById("hasil").innerHTML = "Luas Trapesium: " + luas.toFixed(2);
+    }
+</script>
+
+</body>
+</html>
